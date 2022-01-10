@@ -24,15 +24,54 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.oldtestament{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+.bookNames{
+  text-transform: capitalize;
+  border: 1px solid;
+  margin: 5px;
+  padding:10px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.bookNames:hover{
+  background-color: white;
+  color: black;
+}
+
+.chapters{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.chapterNumber{
+
+  border:1px solid;
+  padding-left:15px;
+  padding-right:15px;
+  margin: 5px;
+  cursor: pointer
+
+
+}
+
+.chapterNumber:hover{
+
+  background-color: white;
+  color: black;
+
+}
+
+.fullChapter{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 50%;
 }
