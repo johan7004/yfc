@@ -110,7 +110,7 @@ class App extends Component {
       document.querySelector('.oldtestamentBook').style.display="none";
       document.querySelector('.newtestamentBook').style.display="block"
       document.querySelector('.newtestamentBook').style.marginLeft="24%"
-    } else{
+    } if(testament==="old testament"){
       console.log(testament)
       document.querySelector('.newtestamentBook').style.display="none";
       document.querySelector('.oldtestamentBook').style.display="block"
@@ -171,10 +171,12 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
         <div className="testamentDisplay">
-        <a className="bookDisplayBtn" onClick={this.displayTestament}>Old Testament</a>
+        <a className="bookDisplayBtn" onClick={this.displayTestament}>
+        Old Testament
+        </a>
+        <a className="bookDisplayBtn" onClick={this.displayTestament}>New Testament
         
-        
-        <a className="bookDisplayBtn" onClick={this.displayTestament}>New Testament</a>
+        </a>
         </div>
         
         

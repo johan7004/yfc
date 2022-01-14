@@ -50,6 +50,17 @@ a{
   justify-content: center;
   padding: 10px;
   margin:50px;
+  border: 1px solid;
+  cursor: pointer;
+
+}
+
+
+.bookDisplayBtn:hover {
+  
+  transform: translateY(-2px);
+  background-color: white;
+  color:black
 }
 
 .testamentDisplay{
