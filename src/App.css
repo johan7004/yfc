@@ -91,3 +91,11 @@
   flex-wrap: wrap;
   width: 50%;
 }
+
+/* media queries */
+
+@media only screen and (max-width: 600px){
+  .row{
+    display: block;
+  }
+}
