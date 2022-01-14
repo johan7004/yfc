@@ -97,5 +97,10 @@
 @media only screen and (max-width: 600px){
   .row{
     display: block;
+    text-align:center;
+  }
+  .col-2{
+    margin-left:25%;
+    order:4;
   }
 }
