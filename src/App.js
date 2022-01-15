@@ -1,8 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import logo from "./logo.svg";
 import "./App.css";
 import { Component } from "react";
-import { useState } from "react";
 
 class App extends Component {
   constructor() {
