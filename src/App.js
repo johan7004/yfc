@@ -145,6 +145,9 @@ class App extends Component {
       this.setState({ selectedBibleBook: numberOfChapter });
       let totalChapter = Object.keys(numberOfChapter);
       this.setState({ chapterNumbers: totalChapter });
+
+      document.querySelector('.chapters').scrollIntoView({ behavior: 'smooth', block: "end" });
+
     }
   }
 
@@ -163,6 +166,7 @@ class App extends Component {
           return { fullChapter: [...prevState.fullChapter, verses.Verse] };
         })
       );
+      document.querySelector('.fullChapter').scrollIntoView({'behavior':"smooth", block:"start"})
     }
   }
 
