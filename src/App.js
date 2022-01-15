@@ -180,8 +180,7 @@ class App extends Component {
         
         </a>
         </div>
-        
-        
+        <a >ASV version</a>
         <div className="row ">
             <div className="col-2 oldtestamentBook">
             
