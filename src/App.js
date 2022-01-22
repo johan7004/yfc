@@ -94,7 +94,7 @@ class App extends Component {
 
   componentDidMount() {
     fetch(
-      "https://youth-for-christ-1-default-rtdb.europe-west1.firebasedatabase.app/Book.json"
+      "https://yfc-eng-bible-default-rtdb.firebaseio.com/Book.json"
     )
       .then((response) => response.json())
       .then((Book) => this.setState({ bible: Book }));
@@ -184,7 +184,7 @@ class App extends Component {
   englishVersion(){
     this.setState({bible:""});
     fetch(
-      "https://youth-for-christ-1-default-rtdb.europe-west1.firebasedatabase.app/Book.json"
+      "https://yfc-eng-bible-default-rtdb.firebaseio.com/Book"
     )
       .then((response) => response.json())
       .then((Book) => this.setState({ bible: Book }));
