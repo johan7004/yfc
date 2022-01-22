@@ -87,6 +87,8 @@ class App extends Component {
     this.selectedBook = this.selectedBook.bind(this);
     this.selectedChapter = this.selectedChapter.bind(this);
     this.displayTestament = this.displayTestament.bind(this)
+    this.tamilversion = this.tamilversion.bind(this)
+    this.englishversion = this.englishversion.bind(this)
   }
 
   componentDidMount() {
@@ -168,6 +170,30 @@ class App extends Component {
     }
   }
 
+  tamilversion(){
+    this.setState({bible:""})
+    fetch(
+      "https://yfc-tamil-bible-default-rtdb.firebaseio.com/Book.json"
+    )
+      .then((response) => response.json())
+      .then((Book) => this.setState({ bible: Book }));
+
+
+  }
+
+  englishversion(){
+
+    this.setState({bible:""})
+
+    fetch(
+      "https://youth-for-christ-1-default-rtdb.europe-west1.firebasedatabase.app/Book.json"
+    )
+      .then((response) => response.json())
+      .then((Book) => this.setState({ bible: Book }));
+  }
+
+  
+
   render() {
     return (
       <div className="App">
@@ -180,8 +206,8 @@ class App extends Component {
         
         </a>
         </div>
-        
-        
+        <a onClick={this.englishversion}>English Version</a>
+        <a onClick={this.tamilversion}>Tamil Bible</a>
         <div className="row ">
             <div className="col-2 oldtestamentBook">
             
