@@ -86,7 +86,10 @@ class App extends Component {
 
     this.selectedBook = this.selectedBook.bind(this);
     this.selectedChapter = this.selectedChapter.bind(this);
-    this.displayTestament = this.displayTestament.bind(this)
+    this.displayTestament = this.displayTestament.bind(this);
+    this.englishVersion = this.englishVersion.bind(this);
+    this.tamilVersion = this.tamilVersion.bind(this);
+    this.malayalamVersion = this.malayalamVersion.bind(this);
   }
 
   componentDidMount() {
@@ -168,6 +171,30 @@ class App extends Component {
     }
   }
 
+  tamilVersion(){
+
+    this.setState({bible:""});
+    fetch(
+      "https://yfc-tamil-bible-default-rtdb.firebaseio.com/Book.json"
+    )
+      .then((response) => response.json())
+      .then((Book) => this.setState({ bible: Book }));
+  }
+
+  englishVersion(){
+    this.setState({bible:""});
+    fetch(
+      "https://youth-for-christ-1-default-rtdb.europe-west1.firebasedatabase.app/Book.json"
+    )
+      .then((response) => response.json())
+      .then((Book) => this.setState({ bible: Book }));
+  }
+
+  
+  malayalamVersion(){
+    console.log(`coming soon`)
+  }
+
   render() {
     return (
       <div className="App">
@@ -180,7 +207,12 @@ class App extends Component {
         
         </a>
         </div>
+        <div className="Version-List">
+        <a onClick={this.englishVersion}>English</a>
+        <a onClick={this.tamilVersion}>Tamil</a>
+        <a onClick={this.malayalamVersion}>Malayalam</a>
         
+        </div>
         
         <div className="row ">
             <div className="col-2 oldtestamentBook">

@@ -120,6 +120,12 @@ a{
   width: 50%;
 }
 
+.Version-List{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /* media queries */
 
 @media only screen and (max-width: 600px){
