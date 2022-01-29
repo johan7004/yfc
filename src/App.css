@@ -122,9 +122,19 @@ a{
 
 .Version-List{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
+  width: 25%;
+  margin-left:2%;
 }
+
+.language{
+  border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
 
 /* media queries */
 

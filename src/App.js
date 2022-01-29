@@ -208,9 +208,9 @@ class App extends Component {
         </a>
         </div>
         <div className="Version-List">
-        <a onClick={this.englishVersion}>English</a>
-        <a onClick={this.tamilVersion}>Tamil</a>
-        <a onClick={this.malayalamVersion}>Malayalam</a>
+        <a className="language" onClick={this.englishVersion}>English</a>
+        <a className="language" onClick={this.tamilVersion}>Tamil</a>
+        <a className="language" onClick={this.malayalamVersion}>Malayalam</a>
         
         </div>
         
