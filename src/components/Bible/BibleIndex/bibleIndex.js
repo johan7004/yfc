@@ -101,6 +101,7 @@ export default function BibleDirectory() {
 
   const selectedBook = (e) => {
     let selectedBookTitle = e.target.innerHTML;
+    document.querySelector('.chapters__container').scrollIntoView({behavior:'smooth'})
     setChosenBook(selectedBookTitle);
     return selectedBookTitle;
   };

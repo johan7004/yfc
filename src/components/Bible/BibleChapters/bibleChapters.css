@@ -11,7 +11,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 50%;
+  width: 85%;
 }
 
 .full-chapter__verses {
@@ -21,5 +21,11 @@
 
 .full-chapter__verses--not-active {
   display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .full-chapter__container {
+    width: 50%;
+  }
 }
 /*# sourceMappingURL=bibleChapters.css.map */

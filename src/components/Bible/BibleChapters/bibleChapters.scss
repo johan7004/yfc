@@ -5,7 +5,7 @@
     margin: 5% auto;
     text-align:justify;
     justify-content:center;
-    width:50%
+    width:85%;
 
     }
 
@@ -15,6 +15,16 @@
 
         &--not-active{
             display: none;
+        }
+    }
+}
+
+// Media queries
+
+@media screen and (min-width:600px) {
+    .full-chapter{
+        &__container{
+        width:50%;
         }
     }
 }
