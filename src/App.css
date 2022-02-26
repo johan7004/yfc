@@ -83,10 +83,6 @@ a{
 }
 
 
-.bookNames:hover{
-
-}
-
 .chapters{
   display: flex;
   flex-wrap: wrap;

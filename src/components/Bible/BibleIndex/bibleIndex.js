@@ -117,6 +117,7 @@ export default function BibleDirectory() {
         setFulBook(fullBible[bookIndex]);
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chosenBook]);
 
   return (
