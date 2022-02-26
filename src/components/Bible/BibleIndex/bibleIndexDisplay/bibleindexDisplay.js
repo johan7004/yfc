@@ -8,6 +8,7 @@ export default function BibleIndexDisplay(props) {
   const fullChapter = (e) => {
     let selectedChapter = e.target.innerHTML;
     setWholeChapter(props.selectedBook.Chapter[selectedChapter - 1]);
+    document.querySelector('.full-chapter__verses').scrollIntoView({behavior: 'smooth'});
   };
   return (
     <>
