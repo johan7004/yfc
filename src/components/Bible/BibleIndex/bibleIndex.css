@@ -1,0 +1,22 @@
+.testament__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.testament__title-button {
+  margin: 25px;
+  background: none;
+  padding: 15px;
+  font-size: 25px;
+  border: 1px solid white;
+}
+
+.testament__title-button:hover {
+  color: white;
+}
+
+.testament__title-button:active {
+  color: red;
+}
+/*# sourceMappingURL=bibleIndex.css.map */

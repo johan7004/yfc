@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACK,AAAD,iBAAQ,CAAA;EACJ,OAAO,EAAC,IAAI;CACf;;AACA,AAAD,wBAAe,CAAA;EACX,MAAM,EAAC,IAAI;EACX,UAAU,EAAE,IAAI;EAChB,OAAO,EAAE,IAAI;EACb,SAAS,EAAC,IAAI;EACd,MAAM,EAAE,eAAe;CAS1B;;AAdA,AAOG,wBAPW,AAOV,MAAM,CAAA;EACH,KAAK,EAAC,KAAK;CACd;;AATJ,AAWG,wBAXW,AAWV,OAAO,CAAA;EACJ,KAAK,EAAC,GAAG;CACZ",
+    "sources": [
+        "bibleIndex.scss"
+    ],
+    "names": [],
+    "file": "bibleIndex.css"
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACK,AAAD,wBAAY,CAAA;EACZ,OAAO,EAAC,IAAI;EACZ,cAAc,EAAE,MAAM;EACtB,MAAM,EAAE,OAAO;EACf,UAAU,EAAC,OAAO;EAClB,eAAe,EAAC,MAAM;EACtB,KAAK,EAAC,GAEN;CAAC;;AAEA,AAAD,qBAAS,CAAA;EACL,OAAO,EAAE,GAAG;EACZ,MAAM,EAAE,OAAO;CAKlB;;AAHI,AAAD,iCAAa,CAAA;EACT,OAAO,EAAE,IAAI;CAChB",
+    "sources": [
+        "bibleChapters.scss"
+    ],
+    "names": [],
+    "file": "bibleChapters.css"
+}
