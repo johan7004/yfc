@@ -8,9 +8,12 @@ export default function Biblechapters(props) {
         {props.displayChapter ? (
           props.displayChapter.Verse.map((completeChapter, i) => {
             return (
-              <span className="full-chapter__verses" key={i}>
-                {completeChapter.Verse}
-              </span>
+              
+              <p className="full-chapter__verses" key={i}>
+                {i+1} {completeChapter.Verse}
+              </p>
+              
+              
             );
           })
         ) : (
