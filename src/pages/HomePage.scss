@@ -1,0 +1,17 @@
+.home-page {
+  &__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    a {
+      margin: 20px;
+      padding: 20px;
+      flex: 30%;
+      text-decoration: none;
+      font-size: 32px;
+      border: 1px solid;
+      color: white;
+    }
+  }
+}

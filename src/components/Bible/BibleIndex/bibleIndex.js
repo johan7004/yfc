@@ -4,7 +4,7 @@ import "./bibleIndex.css";
 import BibleIndexDisplay from "./bibleIndexDisplay/bibleindexDisplay";
 export default function BibleDirectory() {
   const [fullBible, setFullBible] = useState(null);
-  const [bibleIndex, setbibleIndex] = useState(["Select Testament"]);
+  const [bibleIndex, setbibleIndex] = useState(["Select Testament To Read"]);
   const [chosenBook, setChosenBook] = useState("");
   const [fullbook, setFulBook] = useState(null);
   const booksOfNewTestament = [
@@ -95,13 +95,15 @@ export default function BibleDirectory() {
       case "New Testament":
         return setbibleIndex(booksOfNewTestament);
       default:
-        return "Select Testament";
+        return "Select Testament To Read";
     }
   };
 
   const selectedBook = (e) => {
     let selectedBookTitle = e.target.innerHTML;
-    document.querySelector('.chapters__container').scrollIntoView({behavior:'smooth'})
+    document
+      .querySelector(".chapters__container")
+      .scrollIntoView({ behavior: "smooth" });
     setChosenBook(selectedBookTitle);
     return selectedBookTitle;
   };
@@ -118,11 +120,13 @@ export default function BibleDirectory() {
         setFulBook(fullBible[bookIndex]);
       }
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chosenBook]);
 
   return (
     <>
+    <div className="bible__container">
+      <h1>Holy Bible</h1>
       <section className="testament">
         <div className="testament__title">
           <button className="testament__title-button" onClick={selectTestament}>
@@ -143,6 +147,7 @@ export default function BibleDirectory() {
           ))}
           selectedBook={fullbook}
         ></BibleIndexDisplay>
+      </div>
       </div>
     </>
   );
