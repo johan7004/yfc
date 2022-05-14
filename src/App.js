@@ -15,10 +15,10 @@ class App extends Component {
         <header className="App-header">
           <Routes>
             <Route path="/yfc" element={<HomePage />}></Route>
-            <Route path="/bible" element={<BiblePage />}></Route>
-            <Route path="/Songs" element={<SongsPage/>}></Route>
-            <Route path="/health-tips" element={<HealthTipsPage/>}></Route>
-            <Route path="/bible-q-a" element={<BibleQaPage/>}></Route>
+            <Route path="/yfc/bible" element={<BiblePage />}></Route>
+            <Route path="/yfc/Songs" element={<SongsPage/>}></Route>
+            <Route path="/yfc/health-tips" element={<HealthTipsPage/>}></Route>
+            <Route path="/yfc/bible-q-a" element={<BibleQaPage/>}></Route>
           </Routes>
         </header>
       </div>

@@ -7,10 +7,10 @@ export default function HomePage() {
   return (
     <div className="home-page__container">
     
-      <a href="/bible">Bible</a>
-      <a href="/Songs">songs</a>
-      <a href="/health-tips">Health Tips</a>
-      <a href="/bible-q-a">Bible Q&A</a>
+      <a href="/yfc/bible">Bible</a>
+      <a href="/yfc/Songs">songs</a>
+      <a href="/yfc/health-tips">Health Tips</a>
+      <a href="/yfc/bible-q-a">Bible Q&A</a>
       
     </div>
   );
