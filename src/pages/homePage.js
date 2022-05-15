@@ -1,17 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./HomePage.css";
-import BibleDirectory from "../components/Bible/BibleIndex/bibleIndex";
-import ChristianSongs from "../components/Songs/ChristianSongs";
 
 export default function HomePage() {
   return (
     <div className="home-page__container">
-    
-      <a href="/yfc/bible">Bible</a>
-      <a href="/yfc/Songs">songs</a>
-      <a href="/yfc/health-tips">Health Tips</a>
-      <a href="/yfc/bible-q-a">Bible Q&A</a>
-      
+      <Link to="/yfc/bible">
+        Bible
+      </Link>
+      <Link to="/yfc/Songs">
+        Songs
+      </Link>
+      <Link to="/yfc/health-tips">
+        Health Tips
+      </Link>
+      <Link to="/yfc/bible-q-a">
+        Bible Q&A
+      </Link>
     </div>
   );
 }
