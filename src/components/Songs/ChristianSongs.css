@@ -4,7 +4,37 @@
   margin: 25px;
 }
 
-h1, h4 {
+h1,
+h4 {
   cursor: pointer;
+}
+
+.song-list__container {
+  margin-bottom: 10%;
+  display: inline-block;
+}
+
+.song-list__container .full-song tbody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.song-list__container .full-song tbody tr {
+  margin: 10px;
+  display: inline-block;
+}
+
+.song-btn-category, .song-btn-list {
+  background: none;
+  border: none;
+}
+
+.song-btn-category h4, .song-btn-list h4 {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=ChristianSongs.css.map */

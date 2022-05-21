@@ -125,29 +125,40 @@ export default function BibleDirectory() {
 
   return (
     <>
-    <div className="bible__container">
-      <h1>Holy Bible</h1>
-      <section className="testament">
-        <div className="testament__title">
-          <button className="testament__title-button" onClick={selectTestament}>
-            Old Testament
-          </button>
+      <div className="bible__container">
+        <h1>Holy Bible</h1>
+        <section className="testament">
+          <div className="testament__title">
+            <button
+              className="testament__title-button"
+              onClick={selectTestament}
+            >
+              Old Testament
+            </button>
 
-          <button className="testament__title-button" onClick={selectTestament}>
-            New Testament
-          </button>
+            <button
+              className="testament__title-button"
+              onClick={selectTestament}
+            >
+              New Testament
+            </button>
+          </div>
+        </section>
+        <div>
+          <BibleIndexDisplay
+            bookNames={bibleIndex.map((books) => (
+              <p
+                key={books}
+                data-value={books}
+                className="book-name__title"
+                onClick={selectedBook}
+              >
+                {books}
+              </p>
+            ))}
+            selectedBook={fullbook}
+          ></BibleIndexDisplay>
         </div>
-      </section>
-      <div>
-        <BibleIndexDisplay
-          bookNames={bibleIndex.map((books) => (
-            <p key={books} className="book-name__title" onClick={selectedBook}>
-              {books}
-            </p>
-          ))}
-          selectedBook={fullbook}
-        ></BibleIndexDisplay>
-      </div>
       </div>
     </>
   );

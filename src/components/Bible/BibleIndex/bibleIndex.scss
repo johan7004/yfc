@@ -11,7 +11,7 @@
         border: 1px solid white;
 
         &:hover{
-            color:white;
+            color:grey;
         }
 
         &:active{
@@ -19,4 +19,8 @@
         }
     }
     
+}
+
+[data-value~="Select"]{
+    display:none;
 }

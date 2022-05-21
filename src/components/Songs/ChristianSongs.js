@@ -4,7 +4,8 @@ import "./ChristianSongs.css";
 export default function ChristianSongs() {
   const [listOfCategories, setListOfCategories] = useState([]);
   const [songData, setSongData] = useState([]);
-  const [fullSong, setFullSong] = useState("");
+  const [fullSong, setFullSong] = useState([]);
+  const [songFullTitle, setSongFullTitle] = useState("");
 
   useEffect(() => {
     fetch("https://yfcbackend.herokuapp.com/api/categories")
@@ -21,30 +22,46 @@ export default function ChristianSongs() {
     )
       .then((res) => res.json())
       .then((data) => setSongData(data.data));
+
+    const hideFullSong = document.querySelector(".full-song");
+
+    if (hideFullSong) {
+      hideFullSong.style.display = "none";
+    }
   }
 
-  function displayFullSong(e) {
+  const displayFullSong = (e) => {
     e.preventDefault();
     const selectedSongTitle = e.target.innerText;
 
-    songData.map((data) => {
-      const songTitle = data.attributes.Song__Title;
+    setSongFullTitle(selectedSongTitle);
 
-      const findSong =
-        songTitle === selectedSongTitle
-          ? setFullSong(data.attributes.Song)
-          : setFullSong("");
+    const hideFullSong = document.querySelector(".full-song");
 
-      return findSong;
+    if (hideFullSong) {
+      hideFullSong.style.display = "block";
+    }
+  };
+
+  useEffect(() => {
+    songData.forEach((data) => {
+      return data.attributes.Song__Title === songFullTitle
+        ? setFullSong(data.attributes.Song.split("\n"))
+        : "";
     });
-  }
+  }, [songFullTitle, songData]);
+
   return (
     <>
       <div className="christian-songs__container">
         <h1> ChristianSongs</h1>
         {listOfCategories.map((data, i) => {
           return (
-            <button key={i} onClick={(e) => displaySongList(e)}>
+            <button
+              className="song-btn-category"
+              key={i}
+              onClick={displaySongList}
+            >
               <h4>{data.attributes.Category__Name}</h4>
             </button>
           );
@@ -53,12 +70,27 @@ export default function ChristianSongs() {
       <div className="song-list__container">
         {songData.map((data, i) => {
           return (
-            <p key={i} onClick={(e) => displayFullSong(e)}>
-              {data.attributes.Song__Title}
-            </p>
+            <ul key={i}>
+              <button
+                className="song-btn-list"
+                onClick={(e) => displayFullSong(e)}
+              >
+                <h4> {data.attributes.Song__Title}</h4>
+              </button>
+            </ul>
           );
         })}
-        <p>{fullSong}</p>
+        <table className="full-song">
+          <tbody>
+            {fullSong.map((data, i) => {
+              return (
+                <tr key={i}>
+                  <td>{data}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     </>
   );

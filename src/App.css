@@ -1,33 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Merriweather:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Merriweather:wght@300;400&display=swap");
 
 .App {
-  font-family:  'Merriweather', serif;
+  font-family: "Merriweather", serif;
   text-align: center;
-}
-a{
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
+  flex-wrap: unset;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #252525;
+  overflow: hidden;
 }
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.home-link{
+  display: inline-block;
+  margin-top:20px;
+}
+
+
 

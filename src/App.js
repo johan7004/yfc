@@ -12,15 +12,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <Routes>
-            <Route path="/yfc" element={<HomePage />}></Route>
-            <Route path="/yfc/bible" element={<BiblePage />}></Route>
-            <Route path="/yfc/Songs" element={<SongsPage />}></Route>
-            <Route path="/yfc/health-tips" element={<HealthTipsPage />}></Route>
-            <Route path="/yfc/bible-q-a" element={<BibleQaPage />}></Route>
-          </Routes>
-        </header>
+        <Routes>
+          <Route path="/yfc" element={<HomePage />}></Route>
+          <Route path="/yfc/bible/" element={<BiblePage />}></Route>
+          <Route path="/yfc/Songs/" element={<SongsPage />}></Route>
+          <Route path="/yfc/health-tips/" element={<HealthTipsPage />}></Route>
+          <Route path="/yfc/bible-q-a/" element={<BibleQaPage />}></Route>
+        </Routes>
       </div>
     );
   }

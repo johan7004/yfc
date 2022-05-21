@@ -1,12 +1,40 @@
-.christian-songs{
-    &__container{
-        border: 1px solid;
-        padding: 25px;
-        margin: 25px;
-    
-    }
+.christian-songs {
+  &__container {
+    border: 1px solid;
+    padding: 25px;
+    margin: 25px;
+  }
 }
 
-h1,h4{
-    cursor: pointer;
+h1,
+h4 {
+  cursor: pointer;
+}
+
+.song-list {
+  &__container {
+    margin-bottom: 10%;
+    display: inline-block;
+
+    .full-song tbody {
+      display: flex;
+      flex-direction: column;
+      tr {
+        margin: 10px;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.song-btn {
+  &-category,
+  &-list {
+    background: none;
+    border: none;
+
+    h4 {
+      text-decoration: underline;
+    }
+  }
 }

@@ -13,10 +13,14 @@
 }
 
 .testament__title-button:hover {
-  color: white;
+  color: grey;
 }
 
 .testament__title-button:active {
   color: red;
+}
+
+[data-value~="Select"] {
+  display: none;
 }
 /*# sourceMappingURL=bibleIndex.css.map */

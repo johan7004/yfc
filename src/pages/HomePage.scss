@@ -3,7 +3,9 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
+    animation: fadeIn 1.3s;
+    opacity: 1;
+    margin-top: 15%;
     a {
       margin: 20px;
       padding: 20px;
@@ -11,7 +13,7 @@
       text-decoration: none;
       font-size: 32px;
       border: 1px solid;
-      color: white;
+      color: #252525;
     }
   }
 }
