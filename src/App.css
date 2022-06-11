@@ -1,26 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Merriweather:wght@300;400&display=swap");
 
-.App {
-  font-family: "Merriweather", serif;
-  text-align: center;
-  display: flex;
-  flex-wrap: unset;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: #252525;
-  overflow: hidden;
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Karla:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200;1,300;1,500;1,600;1,700;1,800&display=swap');
+
+
+* {
+  color: white;
+  font-family: 'Karla', sans-serif !important;
 }
-a {
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.home-link{
-  display: inline-block;
-  margin-top:20px;
-}
-
-
-

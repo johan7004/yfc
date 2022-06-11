@@ -1,0 +1,14 @@
+.nav-bar__container {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.nav-bar__item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-bar__link--active {
+  color: black;
+}
+/*# sourceMappingURL=nav-bar.css.map */

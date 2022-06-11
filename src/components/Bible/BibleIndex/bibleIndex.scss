@@ -1,26 +1,33 @@
-
-.testament{
-    &__title{
-        display:flex;
+.bible {
+  &__container {
+    h1 {
+      display: flex;
+      justify-content: center;
     }
-    &__title-button{
-        margin:25px;
-        background: none;
-        padding: 15px;
-        font-size:25px;
-        border: 1px solid white;
+  }
+}
+.testament {
+  &__title {
+    display: flex;
+    justify-content: space-around;
+  }
+  &__title-button {
+    margin: 25px;
+    background: none;
+    padding: 15px;
+    font-size: 25px;
+    border: 1px solid white;
 
-        &:hover{
-            color:grey;
-        }
-
-        &:active{
-            color:red;
-        }
+    &:hover {
+      color: grey;
     }
-    
+
+    &:active {
+      color: red;
+    }
+  }
 }
 
-[data-value~="Select"]{
-    display:none;
+[data-value~="Select"] {
+  display: none;
 }

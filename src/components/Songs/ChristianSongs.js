@@ -54,7 +54,6 @@ export default function ChristianSongs() {
   return (
     <>
       <div className="christian-songs__container">
-        <h1> ChristianSongs</h1>
         {listOfCategories.map((data, i) => {
           return (
             <button

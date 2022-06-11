@@ -38,11 +38,11 @@ export default function BibleDirectory() {
   ];
 
   const bookOfOldTestament = [
-    "genisis",
+    "genesis",
     "exodus",
     "leviticus",
     "numbers",
-    "dueteronomy",
+    "deuteronomy",
     "joshua",
     "judges",
     "ruth",

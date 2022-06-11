@@ -1,30 +1,31 @@
-.full-chapter{
-    &__container{
-    display:flex;
+.full-chapter {
+  &__container {
+    display: flex;
     flex-direction: column;
     margin: 5% auto;
-    text-align:justify;
-    justify-content:center;
-    width:85%;
+    text-align: justify;
+    justify-content: center;
+    width: 85%;
 
+    
+  }
+
+  &__verses {
+    padding: 5px;
+    cursor: pointer;
+
+    &--not-active {
+      display: none;
     }
-
-    &__verses{
-        padding: 5px;
-        cursor: pointer;
-
-        &--not-active{
-            display: none;
-        }
-    }
+  }
 }
 
 // Media queries
 
-@media screen and (min-width:600px) {
-    .full-chapter{
-        &__container{
-        width:50%;
-        }
+@media screen and (min-width: 600px) {
+  .full-chapter {
+    &__container {
+      width: 50%;
     }
+  }
 }

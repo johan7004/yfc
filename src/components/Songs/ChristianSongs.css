@@ -1,7 +1,10 @@
 .christian-songs__container {
-  border: 1px solid;
-  padding: 25px;
-  margin: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 h1,
@@ -12,6 +15,10 @@ h4 {
 .song-list__container {
   margin-bottom: 10%;
   display: inline-block;
+}
+
+.song-list__container ul {
+  padding: 0;
 }
 
 .song-list__container .full-song tbody {
@@ -34,7 +41,7 @@ h4 {
   border: none;
 }
 
-.song-btn-category h4, .song-btn-list h4 {
-  text-decoration: underline;
+.song-btn-category h4:hover {
+  color: black;
 }
 /*# sourceMappingURL=ChristianSongs.css.map */

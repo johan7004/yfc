@@ -1,13 +1,11 @@
 import React from "react";
 import BibleDirectory from "../../components/Bible/BibleIndex/bibleIndex";
-import { Link } from "react-router-dom";
+import NavBar from "../../components/Navbar/NavBar";
 
 export default function BiblePage() {
   return (
     <div>
-  <div className="home-link">
-      <Link  to="/yfc">Home</Link>
-      </div>
+      <NavBar />
       <BibleDirectory />
     </div>
   );

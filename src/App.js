@@ -7,11 +7,13 @@ import SongsPage from "./pages/SongsPage/SongsPage";
 import HomePage from "./pages/homePage";
 import BibleQaPage from "./pages/BibleQaPage/BibleQaPage";
 import HealthTipsPage from "./pages/HealthTipsPage/HealthTipsPage";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      
         <Routes>
           <Route path="/yfc" element={<HomePage />}></Route>
           <Route path="/yfc/bible/" element={<BiblePage />}></Route>
@@ -19,7 +21,7 @@ class App extends Component {
           <Route path="/yfc/health-tips/" element={<HealthTipsPage />}></Route>
           <Route path="/yfc/bible-q-a/" element={<BibleQaPage />}></Route>
         </Routes>
-      </div>
+  
     );
   }
 }

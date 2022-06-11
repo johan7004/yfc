@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
+import NavBar from "../../components/Navbar/NavBar";
 
 export default function BibleQaPage() {
   return (
-    <div>Coming Soon</div>
-  )
+    <div>
+      <NavBar />
+      Coming Soon
+    </div>
+  );
 }
