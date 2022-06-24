@@ -55,6 +55,33 @@
           animation-duration: 2.5s;
 }
 
+.Bible-study {
+  padding-top: 45px;
+}
+
+.Bible-study__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Bible-study__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-bottom: 60px;
+}
+
+.Bible-study__text--answer {
+  max-width: 50%;
+}
+
 @-webkit-keyframes text-slide-in {
   0% {
     margin-left: -15%;

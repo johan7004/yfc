@@ -41,6 +41,30 @@ flex-direction: column;
   }
 }
 
+.Bible-study{
+  padding-top:45px;
+
+  &__container{
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  &__item{
+    display:flex;
+    justify-content: space-around;
+    padding-bottom:60px
+
+  }
+
+  &__text{
+
+    &--answer{
+      max-width: 50%;
+    }
+  }
+}
+
 @keyframes text-slide-in {
   0% {
     margin-left: -15%;
