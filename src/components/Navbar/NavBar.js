@@ -1,13 +1,13 @@
 import { React } from "react";
-import { Outlet,Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { Nav, Navbar, Container } from "react-bootstrap";
-import Footer from './../footer/Footer'
+
 import "./nav-bar.css";
 
 function NavBar() {
   return (
     <div className="nav-bar__container">
-      <Navbar className="nav-bar__items"  expand="lg">
+      <Navbar className="nav-bar__items" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/">
             Towards Christ
@@ -34,8 +34,7 @@ function NavBar() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Outlet/>
-      <Footer />
+      <Outlet />
     </div>
   );
 }
