@@ -23,11 +23,7 @@ export default function ChristianSongs() {
       .then((res) => res.json())
       .then((data) => setSongData(data.data));
 
-    const hideFullSong = document.querySelector(".full-song");
 
-    if (hideFullSong) {
-      hideFullSong.style.display = "none";
-    }
   }
 
   const displayFullSong = (e) => {
@@ -36,11 +32,7 @@ export default function ChristianSongs() {
 
     setSongFullTitle(selectedSongTitle);
 
-    const hideFullSong = document.querySelector(".full-song");
 
-    if (hideFullSong) {
-      hideFullSong.style.display = "block";
-    }
   };
 
   useEffect(() => {
@@ -54,7 +46,7 @@ export default function ChristianSongs() {
   return (
     <>
       <div className="christian-songs__container">
-        {listOfCategories.map((data, i) => {
+        {!listOfCategories?'Loading.....':listOfCategories.map((data, i) => {
           return (
             <button
               className="song-btn-category"

@@ -1,0 +1,13 @@
+.Latest-topics{
+    &__cards{
+      
+    }
+
+}
+
+@media screen and (max-width:600px){
+
+    .Latest-topics__cards{
+      flex-direction: column;
+    }
+}

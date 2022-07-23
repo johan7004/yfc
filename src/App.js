@@ -7,21 +7,26 @@ import SongsPage from "./pages/SongsPage/SongsPage";
 import HomePage from "./pages/homePage";
 import BibleQaPage from "./pages/BibleQaPage/BibleQaPage";
 import HealthTipsPage from "./pages/HealthTipsPage/HealthTipsPage";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import BibleStudy from "./pages/BibleStudy/BibleStudy";
+import NavBar from "./components/Navbar/NavBar";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+
 
 
 class App extends Component {
   render() {
     return (
-      
-        <Routes>
-          <Route path="/yfc" element={<HomePage />}></Route>
-          <Route path="/yfc/bible/" element={<BiblePage />}></Route>
-          <Route path="/yfc/Songs/" element={<SongsPage />}></Route>
-          <Route path="/yfc/health-tips/" element={<HealthTipsPage />}></Route>
-          <Route path="/yfc/bible-q-a/" element={<BibleQaPage />}></Route>
-        </Routes>
-  
+      <Routes>
+        <Route path="/" element={<NavBar />}>
+        <Route index element={<HomePage/>}></Route>
+        <Route path="Songs" element={<SongsPage />}></Route>
+        <Route path="bible" element={<BiblePage />}></Route>
+        <Route path="bible-study" element={<BibleStudy />}></Route>
+        <Route path="bible-q-a" element={<BibleQaPage />}></Route>
+        <Route path="health-tips" element={<HealthTipsPage />}></Route>
+        </Route>
+      </Routes>
     );
   }
 }

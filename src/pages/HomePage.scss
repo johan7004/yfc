@@ -20,47 +20,47 @@
 }
 
 .Welcome-message {
-  background: url("../assets/aaron-burden-cmIqkMPfpMQ-unsplash.jpg");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  height: 100vh;
-display: flex;
-flex-direction: column;
-
-
-  &__container {
-    max-width: 50%;
-   
+  margin: 0 auto;
+  padding: 25px;
+  &-image {
+    width: 100%;
   }
-  &__title {
-    font-size: 6.5rem;
-    font-weight: 700;
-    padding: 25px;
-    animation-name: text-slide-in;
-    animation-duration: 2.5s;
+  &-text {
+    width: 100%;
+    max-height: 30%;
   }
 }
 
-.Bible-study{
-  padding-top:45px;
+.Bible-study {
+  padding-top: 45px;
 
-  &__container{
+  &__container {
     display: flex;
     flex-direction: column;
-    
   }
 
-  &__item{
-    display:flex;
+  &__item {
+    display: flex;
     justify-content: space-around;
-    padding-bottom:60px
-
+    padding-bottom: 60px;
+    border-right: 1px solid #ccc;
   }
 
-  &__text{
-
-    &--answer{
+  &__text {
+    &--answer {
       max-width: 50%;
+      margin-left: 25px;
+    }
+  }
+
+  &-cards {
+    padding-top: 25px;
+    background: #dddada;
+
+    &__title {
+      display: flex;
+      justify-content: center;
+      padding: 25px;
     }
   }
 }
@@ -72,12 +72,7 @@ flex-direction: column;
 }
 
 @media only screen and (max-width: 600px) {
-
-  .Welcome-message{
-    &__container {
-      max-width: 100%;
-    }
-
+  .Welcome-message {
+    flex-direction: column;
   }
-  
 }

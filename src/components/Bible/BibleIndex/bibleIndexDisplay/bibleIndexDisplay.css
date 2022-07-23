@@ -1,64 +1,41 @@
 .book-name__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: wrap;
   cursor: pointer;
 }
-
 .book-name__title {
   text-transform: capitalize;
   font-weight: bold;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 30%;
-          flex: 1 1 30%;
+  flex: 1 1 30%;
   border: 1px solid;
   margin: 5px;
   padding: 15px;
 }
-
 .book-name__title:hover {
   background-color: white;
   color: black;
 }
 
 .chapters__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
   margin: 2% auto;
 }
-
 .chapters__numbers {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 10%;
-          flex: 0 0 10%;
+  flex: 0 0 10%;
   border: 1px solid;
   margin: 5px;
   padding: 10px;
   font-weight: 900;
   cursor: pointer;
 }
-
 .chapters__numbers:hover {
   background-color: white;
   color: black;
 }
-
 .chapters__numbers--not-active {
   display: none;
-}
-/*# sourceMappingURL=bibleIndexDisplay.css.map */
+}/*# sourceMappingURL=bibleIndexDisplay.css.map */

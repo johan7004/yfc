@@ -1,24 +1,15 @@
 .full-chapter__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin: 5% auto;
   text-align: justify;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 85%;
 }
-
 .full-chapter__verses {
   padding: 5px;
   cursor: pointer;
 }
-
 .full-chapter__verses--not-active {
   display: none;
 }
@@ -27,5 +18,4 @@
   .full-chapter__container {
     width: 50%;
   }
-}
-/*# sourceMappingURL=bibleChapters.css.map */
+}/*# sourceMappingURL=bibleChapters.css.map */

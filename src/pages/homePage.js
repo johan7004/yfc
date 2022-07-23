@@ -1,35 +1,42 @@
 import React from "react";
-import NavBar from "../components/Navbar/NavBar";
+import { Container, Row, Col } from "react-bootstrap";
+import LatestTopics from "./../components/LatestTopics/LatestTopics";
+import Image from "./../assets/aaron-burden-cmIqkMPfpMQ-unsplash.webp";
+
 import "./HomePage.css";
 
 export default function HomePage() {
   return (
     <>
-      <section className="Welcome-message">
-        <NavBar></NavBar>
-        <div className="Welcome-message__container">
-          <h1 className="Welcome-message__title">
-            Come Let us Know the real God
-          </h1>
-        </div>
-      </section>
-      <section className="Bible-study">
-        <div className="Bible-study__container">
-          <div className="Bible-study__item">
-            <h4 className="Bible-study__text--answer">Answer here Answer here Answer here Answer hereAnswer hereAnswer hereAnswer hereAnswer hereAnswer hereAnswer hereAnswer hereAnswer here</h4>
-            <h1 className="Bible-study__text--question">Is There A God, Really??</h1>
-          </div>
-          <div className="Bible-study__item">
-            <h1 className="Bible-study__text--question">
-              Why Do I need To Know about him?
-            </h1>
-            <h4 className="Bible-study__text--answer">Answer here Answer here Answer here Answer here Answer hereAnswer hereAnswer hereAnswer hereAnswer hereAnswer hereAnswer hereAnswer hereAnswer here</h4>
-          </div>
-          <div className="Bible-study__item">
-            <h4 className="Bible-study__text--answer">Answer here Answer here Answer here Answer here Answer hereAnswer hereAnswer hereAnswer hereAnswer hereAnswer hereAnswer hereAnswer hereAnswer here</h4>
-            <h1 className="Bible-study__text--question">Why Should I Trust Bible not</h1>
-          </div>
-        </div>
+      <Container>
+        <Row className="Welcome-message">
+          <Col>
+            {" "}
+            <img
+              className="Welcome-message-image"
+              src={Image}
+              alt="Promise"
+            ></img>
+          </Col>
+          <Col>
+            {" "}
+            <div className="Welcome-message-text">
+              <h1>Today's Promise</h1>
+              <h3>
+                Through him all things were made; without him nothing was made
+                that has been made.
+              </h3>
+              <p>John 1:3</p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+
+      <section className="Bible-study-cards">
+        <h2 className="Bible-study-cards__title">
+          Interesting Bible Study Topics
+        </h2>
+        <LatestTopics />
       </section>
     </>
   );

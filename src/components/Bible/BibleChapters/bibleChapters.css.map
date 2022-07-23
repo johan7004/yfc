@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AACG,AAAD,wBAAY,CAAC;EACX,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,MAAM,EAAE,OAAO;EACf,UAAU,EAAE,OAAO;EACnB,eAAe,EAAE,MAAM;EACvB,KAAK,EAAE,GAAG;CAGX;;AAEA,AAAD,qBAAS,CAAC;EACR,OAAO,EAAE,GAAG;EACZ,MAAM,EAAE,OAAO;CAKhB;;AAHE,AAAD,iCAAa,CAAC;EACZ,OAAO,EAAE,IAAI;CACd;;AAML,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EAE9B,AAAD,wBAAY,CAAC;IACX,KAAK,EAAE,GAAG;GACX",
-    "sources": [
-        "bibleChapters.scss"
-    ],
-    "names": [],
-    "file": "bibleChapters.css"
-}
+{"version":3,"sources":["bibleChapters.scss","bibleChapters.css"],"names":[],"mappings":"AACE;EACE,aAAA;EACA,sBAAA;EACA,eAAA;EACA,mBAAA;EACA,uBAAA;EACA,UAAA;ACAJ;ADKE;EACE,YAAA;EACA,eAAA;ACHJ;ADKI;EACE,aAAA;ACHN;;ADUA;EAEI;IACE,UAAA;ECRJ;AACF","file":"bibleChapters.css"}

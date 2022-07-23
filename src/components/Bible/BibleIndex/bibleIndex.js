@@ -2,82 +2,85 @@ import { React, useEffect, useState } from "react";
 import "./bibleIndex.css";
 
 import BibleIndexDisplay from "./bibleIndexDisplay/bibleindexDisplay";
+
+const bookOfOldTestament = [
+  "genesis",
+  "exodus",
+  "leviticus",
+  "numbers",
+  "deuteronomy",
+  "joshua",
+  "judges",
+  "ruth",
+  "1 samuel",
+  "2 samuel",
+  "1 kings",
+  "2 kings",
+  "1 chronicles",
+  "2 chronicles",
+  "ezra",
+  "nehemiah",
+  "esther",
+  "job",
+  "psalms",
+  "proverbs",
+  "ecclesiastes",
+  "song of solomon",
+  "isiah",
+  "jeremiah",
+  "lamentations",
+  "ezekiel",
+  "daniel",
+  "hosea",
+  "joel",
+  "amos",
+  "obadiah",
+  "jonah",
+  "micah",
+  "nahum",
+  "habakkuk",
+  "zephaniah",
+  "haggai",
+  "zechariah",
+  "malachi",
+];
+const booksOfNewTestament = [
+  "matthew",
+  "mark",
+  "luke",
+  "john",
+  "acts",
+  "romans",
+  "1 corinthians",
+  "2 corinthians",
+  "galations",
+  "ephesians",
+  "philippians",
+  "colossians",
+  "1 thessalonians",
+  "2 thessalonians",
+  "1 timothy",
+  "2 timothy",
+  "titus",
+  "philemon",
+  "hebrews",
+  "james",
+  "1 peter",
+  "2 peter",
+  "1 john",
+  "2 john",
+  "3 john",
+  "jude",
+  "revelation",
+];
+
 export default function BibleDirectory() {
   const [fullBible, setFullBible] = useState(null);
-  const [bibleIndex, setbibleIndex] = useState(["Select Testament To Read"]);
+  const [bibleIndex, setbibleIndex] = useState([]);
   const [chosenBook, setChosenBook] = useState("");
   const [fullbook, setFulBook] = useState(null);
-  const booksOfNewTestament = [
-    "matthew",
-    "mark",
-    "luke",
-    "john",
-    "acts",
-    "romans",
-    "1 corinthians",
-    "2 corinthians",
-    "galations",
-    "ephesians",
-    "philippians",
-    "colossians",
-    "1 thessalonians",
-    "2 thessalonians",
-    "1 timothy",
-    "2 timothy",
-    "titus",
-    "philemon",
-    "hebrews",
-    "james",
-    "1 peter",
-    "2 peter",
-    "1 john",
-    "2 john",
-    "3 john",
-    "jude",
-    "revelation",
-  ];
 
-  const bookOfOldTestament = [
-    "genesis",
-    "exodus",
-    "leviticus",
-    "numbers",
-    "deuteronomy",
-    "joshua",
-    "judges",
-    "ruth",
-    "1 samuel",
-    "2 samuel",
-    "1 kings",
-    "2 kings",
-    "1 chronicles",
-    "2 chronicles",
-    "ezra",
-    "nehemiah",
-    "esther",
-    "job",
-    "psalms",
-    "proverbs",
-    "ecclesiastes",
-    "song of solomon",
-    "isiah",
-    "jeremiah",
-    "lamentations",
-    "ezekiel",
-    "daniel",
-    "hosea",
-    "joel",
-    "amos",
-    "obadiah",
-    "jonah",
-    "micah",
-    "nahum",
-    "habakkuk",
-    "zephaniah",
-    "haggai",
-    "zechariah",
-    "malachi",
-  ];
+ 
 
   useEffect(() => {
     fetch(
@@ -85,6 +88,8 @@ export default function BibleDirectory() {
     )
       .then((response) => response.json())
       .then((Book) => setFullBible(Book));
+
+      setbibleIndex(bookOfOldTestament)
   }, []);
 
   const selectTestament = (e) => {

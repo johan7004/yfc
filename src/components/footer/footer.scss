@@ -1,0 +1,12 @@
+.footer-container {
+  padding-top:25px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .footer-container {
+    &__row {
+      flex-direction: column;
+    }
+  }
+}

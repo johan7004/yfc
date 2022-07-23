@@ -1,0 +1,5 @@
+@media screen and (max-width: 600px) {
+  .Latest-topics__cards {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=Latesttopics.css.map */
