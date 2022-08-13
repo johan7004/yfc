@@ -1,4 +1,6 @@
 import { React, useState, useEffect } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import SongCards from "./../song-cards/song-cards.component.jsx";
 import "./ChristianSongs.css";
 
 export default function ChristianSongs() {
@@ -22,8 +24,6 @@ export default function ChristianSongs() {
     )
       .then((res) => res.json())
       .then((data) => setSongData(data.data));
-
-
   }
 
   const displayFullSong = (e) => {
@@ -31,8 +31,6 @@ export default function ChristianSongs() {
     const selectedSongTitle = e.target.innerText;
 
     setSongFullTitle(selectedSongTitle);
-
-
   };
 
   useEffect(() => {
@@ -46,31 +44,33 @@ export default function ChristianSongs() {
   return (
     <>
       <div className="christian-songs__container">
-        {!listOfCategories?'Loading.....':listOfCategories.map((data, i) => {
-          return (
-            <button
-              className="song-btn-category"
-              key={i}
-              onClick={displaySongList}
-            >
-              <h4>{data.attributes.Category__Name}</h4>
-            </button>
-          );
-        })}
+        {!listOfCategories
+          ? "Loading....."
+          : listOfCategories.map((data, i) => {
+              return (
+                <button
+                  className="song-btn-category"
+                  key={i}
+                  onClick={displaySongList}
+                >
+                  <h4>{data.attributes.Category__Name}</h4>
+                </button>
+              );
+            })}
       </div>
       <div className="song-list__container">
-        {songData.map((data, i) => {
-          return (
-            <ul key={i}>
-              <button
-                className="song-btn-list"
-                onClick={(e) => displayFullSong(e)}
-              >
-                <h4> {data.attributes.Song__Title}</h4>
-              </button>
-            </ul>
-          );
-        })}
+        <Container>
+          <Row>
+            {songData.map((data, i) => {
+              const songTitle = data.attributes.Song__Title;
+              return (
+                <Col key={i}>
+                  <SongCards title={songTitle} description={songTitle} />
+                </Col>
+              );
+            })}
+          </Row>
+        </Container>
         <table className="full-song">
           <tbody>
             {fullSong.map((data, i) => {
