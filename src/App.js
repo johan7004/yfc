@@ -24,7 +24,7 @@ function App() {
     <Routes>
       <Route path="/yfc" element={<NavBar />}>
         <Route index element={<HomePage />}></Route>
-        <Route path="/yfc/Songs" element={<SongsPage />}></Route>
+        <Route path="/yfc/Songs/*" element={<SongsPage />}></Route>
         <Route path="/yfc/bible" element={<BiblePage />}></Route>
         <Route path="/yfc/bible-study" element={<BibleStudy />}></Route>
         <Route path="/yfc/bible-q-a" element={<BibleQaPage />}></Route>

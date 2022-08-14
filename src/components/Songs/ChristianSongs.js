@@ -41,6 +41,8 @@ export default function ChristianSongs() {
     });
   }, [songFullTitle, songData]);
 
+  console.log(songData);
+
   return (
     <>
       <div className="christian-songs__container">
@@ -65,7 +67,7 @@ export default function ChristianSongs() {
               const songTitle = data.attributes.Song__Title;
               return (
                 <Col key={i}>
-                  <SongCards title={songTitle} description={songTitle} />
+                  <SongCards title={songTitle} description={songTitle} url={songTitle} />
                 </Col>
               );
             })}
