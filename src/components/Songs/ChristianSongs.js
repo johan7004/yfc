@@ -1,13 +1,18 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect,useContext } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import SongCards from "./../song-cards/song-cards.component.jsx";
+import {FullSongContext} from './../contexts/songs-provider.context'
 import "./ChristianSongs.css";
+
+export const getSongsData = (data) => {
+  const songListData =()=> data;
+  return songListData();
+};
 
 export default function ChristianSongs() {
   const [listOfCategories, setListOfCategories] = useState([]);
   const [songData, setSongData] = useState([]);
-  const [fullSong, setFullSong] = useState([]);
-  const [songFullTitle, setSongFullTitle] = useState("");
+  const {setFullSong} = useContext(FullSongContext);
 
   useEffect(() => {
     fetch("https://yfcbackend.herokuapp.com/api/categories")
@@ -26,22 +31,9 @@ export default function ChristianSongs() {
       .then((data) => setSongData(data.data));
   }
 
-  const displayFullSong = (e) => {
-    e.preventDefault();
-    const selectedSongTitle = e.target.innerText;
-
-    setSongFullTitle(selectedSongTitle);
-  };
-
   useEffect(() => {
-    songData.forEach((data) => {
-      return data.attributes.Song__Title === songFullTitle
-        ? setFullSong(data.attributes.Song.split("\n"))
-        : "";
-    });
-  }, [songFullTitle, songData]);
-
-  console.log(songData);
+    setFullSong(songData)
+  }, [songData, setFullSong]);
 
   return (
     <>
@@ -60,31 +52,23 @@ export default function ChristianSongs() {
               );
             })}
       </div>
-      <div className="song-list__container">
-        <Container>
-          <Row>
-            {songData.map((data, i) => {
-              const songTitle = data.attributes.Song__Title;
-              return (
-                <Col key={i}>
-                  <SongCards title={songTitle} description={songTitle} url={songTitle} />
-                </Col>
-              );
-            })}
-          </Row>
-        </Container>
-        <table className="full-song">
-          <tbody>
-            {fullSong.map((data, i) => {
-              return (
-                <tr key={i}>
-                  <td>{data}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
+
+      <Container className="song-list__container">
+        <Row>
+          {songData.map((data, i) => {
+            const songTitle = data.attributes.Song__Title;
+            return (
+              <Col key={i}>
+                <SongCards
+                  title={songTitle}
+                  description={songTitle}
+                  url={songTitle}
+                />
+              </Col>
+            );
+          })}
+        </Row>
+      </Container>
     </>
   );
 }

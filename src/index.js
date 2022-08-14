@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import {FullSongProvider} from "./components/contexts/songs-provider.context.jsx";
 
 ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
-      <App />
+      <FullSongProvider>
+        <App />
+      </FullSongProvider>
     </React.StrictMode>
   </BrowserRouter>,
   document.getElementById("root")
