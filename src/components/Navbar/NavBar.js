@@ -9,25 +9,25 @@ function NavBar() {
     <div className="nav-bar__container">
       <Navbar className="nav-bar__items" expand="lg">
         <Container>
-          <Navbar.Brand as={Link} to="/yfc">
+          <Navbar.Brand as={Link} to="/">
             Towards Christ
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to={"/yfc/Songs"}>
+              <Nav.Link as={Link} to={"Songs"}>
                 Songs
               </Nav.Link>
-              <Nav.Link as={Link} to={"/yfc/bible"}>
+              <Nav.Link as={Link} to={"bible"}>
                 Bible
               </Nav.Link>
-              <Nav.Link as={Link} to={"/yfc/bible-q-a"}>
+              <Nav.Link as={Link} to={"bible-q-a"}>
                 Ask-Experts
               </Nav.Link>
-              <Nav.Link as={Link} to={"/yfc/bible-study"}>
+              <Nav.Link as={Link} to={"bible-study"}>
                 Bible Study Topics
               </Nav.Link>
-              <Nav.Link as={Link} to={"/yfc/health-tips"}>
+              <Nav.Link as={Link} to={"health-tips"}>
                 Better Lifestyle
               </Nav.Link>
             </Nav>
