@@ -10,7 +10,6 @@ export const getSongsData = (data) => {
 };
 
 export default function ChristianSongs() {
-  const [allSongsList, setAllSongsList] = useState([]);
   const [listOfCategories, setListOfCategories] = useState([]);
   const [songData, setSongData] = useState([]);
   const {setFullSong} = useContext(FullSongContext);
