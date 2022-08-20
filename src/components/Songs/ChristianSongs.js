@@ -1,26 +1,26 @@
-import { React, useState, useEffect,useContext } from "react";
+import { React, useState, useEffect, useContext } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import SongCards from "./../song-cards/song-cards.component.jsx";
-import {FullSongContext} from './../contexts/songs-provider.context'
+import { FullSongContext } from "./../contexts/songs-provider.context";
 import "./ChristianSongs.css";
 
 export const getSongsData = (data) => {
-  const songListData =()=> data;
+  const songListData = () => data;
   return songListData();
 };
 
 export default function ChristianSongs() {
   const [listOfCategories, setListOfCategories] = useState([]);
   const [songData, setSongData] = useState([]);
-  const {setFullSong} = useContext(FullSongContext);
+  const { setFullSong } = useContext(FullSongContext);
 
   useEffect(() => {
     fetch("https://yfcbackend.herokuapp.com/api/categories")
       .then((res) => res.json())
       .then((data) => setListOfCategories(data.data));
     fetch("https://yfcbackend.herokuapp.com/api/songs")
-    .then(res => res.json())
-    .then(data => setSongData(data.data));
+      .then((res) => res.json())
+      .then((data) => setSongData(data.data));
   }, []);
 
   function displaySongList(e) {
@@ -35,26 +35,26 @@ export default function ChristianSongs() {
   }
 
   useEffect(() => {
-    setFullSong(songData)
+    setFullSong(songData);
   }, [songData, setFullSong]);
 
   return (
     <>
-      <div className="christian-songs__container">
-        {!listOfCategories
-          ? "Loading....."
-          : listOfCategories.map((data, i) => {
-              return (
-                <button
-                  className="song-btn-category"
-                  key={i}
-                  onClick={displaySongList}
-                >
-                  <h4>{data.attributes.Category__Name}</h4>
-                </button>
-              );
-            })}
-      </div>
+      <Container className="christian-songs__container">
+          {!listOfCategories
+            ? "Loading....."
+            : listOfCategories.map((data, i) => {
+                return (
+                  <button
+                    className="song-btn-category"
+                    key={i}
+                    onClick={displaySongList}
+                  >
+                    <h4>{data.attributes.Category__Name}</h4>
+                  </button>
+                );
+              })}
+      </Container>
 
       <Container className="song-list__container">
         <Row>

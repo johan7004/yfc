@@ -1,6 +1,11 @@
 .christian-songs__container {
   display: flex;
   justify-content: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.christian-songs__container h4 {
+  text-transform: uppercase;
 }
 
 h1,

@@ -2,6 +2,12 @@
   &__container {
     display: flex;
     justify-content: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    h4 {
+      text-transform: uppercase;
+    }
   }
 }
 
@@ -14,14 +20,14 @@ h4 {
   &__container {
     display: flex;
 
-    .card-container{
-      margin:16px auto;
+    .card-container {
+      margin: 16px auto;
     }
 
-    a{
-      color:white;
+    a {
+      color: white;
       text-decoration: none;
-      text-transform:uppercase;
+      text-transform: uppercase;
     }
 
     ul {

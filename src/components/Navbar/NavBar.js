@@ -22,13 +22,13 @@ function NavBar() {
                 Bible
               </Nav.Link>
               <Nav.Link as={Link} to={"bible-q-a"}>
-                Ask-Experts
+                Ask-Pastors
               </Nav.Link>
               <Nav.Link as={Link} to={"bible-study"}>
-                Bible Study Topics
+                Studies
               </Nav.Link>
               <Nav.Link as={Link} to={"health-tips"}>
-                Better Lifestyle
+                Health-tips
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
