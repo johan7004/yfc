@@ -24,10 +24,10 @@ export default function FullSong() {
 
   useEffect(() => {
     const getSongFromLocal = localStorage.getItem("Full Song");
-    if (!getSongFromLocal.includes(completeSong)) {
+    if (getSongFromLocal&&!getSongFromLocal.includes(completeSong)) {
       localStorage.setItem("Full Song", completeSong);
-    } else {
-      console.log(`song already set`);
+    } else if(!getSongFromLocal){
+      localStorage.setItem("Full Song", completeSong);
     }
   }, [completeSong]);
 
