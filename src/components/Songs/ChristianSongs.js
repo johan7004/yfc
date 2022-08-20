@@ -26,7 +26,9 @@ export default function ChristianSongs() {
   function displaySongList(e) {
     e.preventDefault();
     const selectedSongCategory = e.target.innerText;
+    
     const categoryName = selectedSongCategory.split(" ").join("%20");
+
     fetch(
       `https://yfcbackend.herokuapp.com/api/songs?filters[$and][0][categories][Category__Name][$eq]=${categoryName}`
     )
