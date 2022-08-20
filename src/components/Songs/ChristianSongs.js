@@ -10,6 +10,7 @@ export const getSongsData = (data) => {
 };
 
 export default function ChristianSongs() {
+  const [allSongsList, setAllSongsList] = useState([]);
   const [listOfCategories, setListOfCategories] = useState([]);
   const [songData, setSongData] = useState([]);
   const {setFullSong} = useContext(FullSongContext);
@@ -18,6 +19,9 @@ export default function ChristianSongs() {
     fetch("https://yfcbackend.herokuapp.com/api/categories")
       .then((res) => res.json())
       .then((data) => setListOfCategories(data.data));
+    fetch("https://yfcbackend.herokuapp.com/api/songs")
+    .then(res => res.json())
+    .then(data => setSongData(data.data));
   }, []);
 
   function displaySongList(e) {

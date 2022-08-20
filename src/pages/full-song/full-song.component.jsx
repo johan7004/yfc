@@ -1,6 +1,7 @@
 import { React, useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { FullSongContext } from "../../components/contexts/songs-provider.context";
+import ReactMarkdown from "react-markdown";
 export default function FullSong() {
   const { song } = useParams();
   const [songList, setSongList] = useState([]);
@@ -22,7 +23,9 @@ export default function FullSong() {
   return (
     <div>
       {console.log(completeSong)}
-      <p>{completeSong}</p>
+      <p>
+        <ReactMarkdown>{completeSong}</ReactMarkdown>
+      </p>
     </div>
   );
 }

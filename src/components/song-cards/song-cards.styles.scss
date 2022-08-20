@@ -1,5 +1,6 @@
 .card-container {
   margin-top: 16px;
+  min-height:266px;
   button{
     a{
       color:white;
@@ -9,5 +10,9 @@
         color:white;
       }
     }
+  }
+
+  &__text{
+    font-size:16px;
   }
 }

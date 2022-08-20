@@ -1,5 +1,6 @@
 .card-container {
   margin-top: 16px;
+  min-height: 266px;
 }
 .card-container button a {
   color: white;
@@ -8,4 +9,7 @@
 }
 .card-container button a:hover {
   color: white;
+}
+.card-container__text {
+  font-size: 16px;
 }/*# sourceMappingURL=song-cards.styles.css.map */
