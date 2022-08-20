@@ -12,6 +12,14 @@ h4 {
   margin-bottom: 10%;
   display: inline-block;
 }
+.song-list__container .card-container {
+  margin: 16px auto;
+}
+.song-list__container a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
 .song-list__container ul {
   padding: 0;
 }

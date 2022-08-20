@@ -60,31 +60,22 @@ export default function ChristianSongs() {
               );
             })}
       </div>
-      <div className="song-list__container">
-        <Container>
-          <Row>
-            {songData.map((data, i) => {
-              const songTitle = data.attributes.Song__Title;
-              return (
-                <Col key={i}>
-                  <SongCards title={songTitle} description={songTitle} url={songTitle} />
-                </Col>
-              );
-            })}
-          </Row>
-        </Container>
-        <table className="full-song">
-          <tbody>
-            {fullSong.map((data, i) => {
-              return (
-                <tr key={i}>
-                  <td>{data}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
+      <Container className="song-list__container">
+        <Row>
+          {songData.map((data, i) => {
+            const songTitle = data.attributes.Song__Title;
+            return (
+              <Col key={i}>
+                <SongCards
+                  title={songTitle}
+                  description={songTitle}
+                  url={songTitle}
+                />
+              </Col>
+            );
+          })}
+        </Row>
+      </Container>
     </>
   );
 }

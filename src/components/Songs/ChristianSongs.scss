@@ -15,6 +15,16 @@ h4 {
     margin-bottom: 10%;
     display: inline-block;
 
+    .card-container{
+      margin:16px auto;
+    }
+
+    a{
+      color:white;
+      text-decoration: none;
+      text-transform:uppercase;
+    }
+
     ul {
       padding: 0;
     }
