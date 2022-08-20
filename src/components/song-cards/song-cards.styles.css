@@ -1,3 +1,11 @@
 .card-container {
   margin-top: 16px;
+}
+.card-container button a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.card-container button a:hover {
+  color: white;
 }/*# sourceMappingURL=song-cards.styles.css.map */

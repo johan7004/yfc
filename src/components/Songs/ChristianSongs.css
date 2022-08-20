@@ -9,8 +9,7 @@ h4 {
 }
 
 .song-list__container {
-  margin-bottom: 10%;
-  display: inline-block;
+  display: flex;
 }
 .song-list__container .card-container {
   margin: 16px auto;

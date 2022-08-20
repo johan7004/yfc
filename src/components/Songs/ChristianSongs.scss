@@ -1,7 +1,7 @@
 .christian-songs {
   &__container {
-    display:flex;
-    justify-content:center;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -12,8 +12,7 @@ h4 {
 
 .song-list {
   &__container {
-    margin-bottom: 10%;
-    display: inline-block;
+    display: flex;
 
     .card-container{
       margin:16px auto;
@@ -32,6 +31,7 @@ h4 {
     .full-song tbody {
       display: flex;
       flex-direction: column;
+
       tr {
         margin: 10px;
         display: inline-block;
@@ -41,13 +41,14 @@ h4 {
 }
 
 .song-btn {
+
   &-category,
   &-list {
     background: none;
     border: none;
   }
 
-  &-category h4:hover{
-    color:black;
+  &-category h4:hover {
+    color: black;
   }
 }

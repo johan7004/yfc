@@ -11,7 +11,6 @@ export default function HomePage() {
       <Container>
         <Row className="Welcome-message">
           <Col>
-            {" "}
             <img
               className="Welcome-message-image"
               src={Image}
