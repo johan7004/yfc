@@ -21,15 +21,15 @@ function NavBar() {
               <Nav.Link as={Link} to={"bible"}>
                 Bible
               </Nav.Link>
-              <Nav.Link as={Link} to={"bible-q-a"}>
+              {/* <Nav.Link as={Link} to={"bible-q-a"}>
                 Ask-Pastors
-              </Nav.Link>
+              </Nav.Link> */}
               <Nav.Link as={Link} to={"bible-study"}>
                 Studies
               </Nav.Link>
-              <Nav.Link as={Link} to={"health-tips"}>
+              {/* <Nav.Link as={Link} to={"health-tips"}>
                 Health-tips
-              </Nav.Link>
+              </Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
