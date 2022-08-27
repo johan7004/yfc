@@ -1,0 +1,12 @@
+.article-list{
+    display: flex;
+    justify-content: space-between;
+    margin: 22px auto;
+    width: 100%;
+}
+
+.offcanvas{
+    &__container{
+        width: 100%;
+    }
+}

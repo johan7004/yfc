@@ -1,9 +1,8 @@
 .christian-songs {
   &__container {
-    display: flex;
-    justify-content: center;
     margin-top: 32px;
     margin-bottom: 32px;
+    text-align: center;
 
 
   }
@@ -50,6 +49,9 @@ h4 {
   &-list {
     background: none;
     border: none;
+    &:hover{
+      border-bottom:1px solid #5D6F7D;
+    }
   }
 
   &-category h4:hover {

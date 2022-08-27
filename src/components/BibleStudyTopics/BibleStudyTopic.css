@@ -1,1 +1,10 @@
-/*# sourceMappingURL=BibleStudyTopic.css.map */
+.article-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 22px auto;
+  width: 100%;
+}
+
+.offcanvas__container {
+  width: 100%;
+}/*# sourceMappingURL=BibleStudyTopic.css.map */

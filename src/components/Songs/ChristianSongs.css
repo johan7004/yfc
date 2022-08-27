@@ -1,8 +1,7 @@
 .christian-songs__container {
-  display: flex;
-  justify-content: center;
   margin-top: 32px;
   margin-bottom: 32px;
+  text-align: center;
 }
 
 h1,
@@ -36,6 +35,9 @@ h4 {
 .song-btn-category, .song-btn-list {
   background: none;
   border: none;
+}
+.song-btn-category:hover, .song-btn-list:hover {
+  border-bottom: 1px solid #5D6F7D;
 }
 .song-btn-category h4:hover {
   color: black;

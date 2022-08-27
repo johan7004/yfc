@@ -26,7 +26,7 @@ export default function ChristianSongs() {
   function displaySongList(e) {
     e.preventDefault();
     const selectedSongCategory = e.target.innerText;
-    
+
     const categoryName = selectedSongCategory.split(" ").join("%20");
 
     fetch(
@@ -43,19 +43,23 @@ export default function ChristianSongs() {
   return (
     <>
       <Container className="christian-songs__container">
+        <Row>
           {!listOfCategories
             ? "Loading....."
             : listOfCategories.map((data, i) => {
                 return (
-                  <button
-                    className="song-btn-category"
-                    key={i}
-                    onClick={displaySongList}
-                  >
-                    <h4>{data.attributes.Category__Name}</h4>
-                  </button>
+                  <Col>
+                    <button
+                      className="song-btn-category"
+                      key={i}
+                      onClick={displaySongList}
+                    >
+                      <h4>{data.attributes.Category__Name}</h4>
+                    </button>
+                  </Col>
                 );
               })}
+        </Row>
       </Container>
 
       <Container className="song-list__container">
