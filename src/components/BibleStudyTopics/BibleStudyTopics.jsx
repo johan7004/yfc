@@ -56,9 +56,9 @@ function BibleStudyTopics() {
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <h5>
+          <>
             <ReactMarkdown>{offCanvasContent}</ReactMarkdown>
-          </h5>
+          </>
         </Offcanvas.Body>
       </Offcanvas>
     </div>
