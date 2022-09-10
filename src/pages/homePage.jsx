@@ -3,9 +3,15 @@ import { Container, Row, Col } from "react-bootstrap";
 import LatestTopics from "../components/LatestTopics/LatestTopics";
 import Image from "./../assets/aaron-burden-cmIqkMPfpMQ-unsplash.webp";
 
+
+
+
 import "./HomePage.css";
 
 export default function HomePage() {
+
+  
+  
   return (
     <>
       <Container>
@@ -37,6 +43,7 @@ export default function HomePage() {
         </h2>
         <LatestTopics />
       </section>
+      
     </>
   );
 }

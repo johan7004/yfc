@@ -19,7 +19,7 @@ function App() {
         <Route index element={<HomePage />}></Route>
         <Route path="Songs/*" element={<SongsPage />}></Route>
         <Route path="bible" element={<BiblePage />}></Route>
-        <Route path="bible-study" element={<BibleStudy />}></Route>
+        <Route path="bible-study/*" element={<BibleStudy />}></Route>
         <Route path="bible-q-a" element={<BibleQaPage />}></Route>
         <Route path="health-tips" element={<HealthTipsPage />}></Route>
       </Route>
