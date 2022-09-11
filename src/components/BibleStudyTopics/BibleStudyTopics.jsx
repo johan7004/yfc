@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button,Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./BibleStudyTopic.css";
 import ARTICLES_QUERY from "./../queries/bible-study-query";
@@ -32,7 +32,9 @@ function BibleStudyTopics() {
               </div>
             );
           })
-        : "Loading"}
+        :    <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>}
     </div>
   );
 }
