@@ -23,10 +23,10 @@ function FullArticlePage() {
   const { bible } = useParams();
   const { data } = useQuery(FULL_ARTICLE_QUERY, { variables: { slug: bible } });
 
-  console.log(bible);
+  
 
   useEffect(() => {
-    console.log(data);
+
     setBibleStudy(data)
   }, [data]);
 

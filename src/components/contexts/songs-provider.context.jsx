@@ -8,9 +8,7 @@ export const FullSongContext = createContext({
 export const FullSongProvider = ({ children }) => {
   const [songs, setFullSong] = useState({});
 
-  useEffect(() =>{
-    console.log(songs)
-  },[songs])
+  
 
   const values = { songs, setFullSong };
   return (

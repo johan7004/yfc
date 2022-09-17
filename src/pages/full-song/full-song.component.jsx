@@ -28,7 +28,7 @@ export default function FullSong() {
   const [completeSong, setCompleteSong] = useState();
   const { data } = useQuery(SINGLE__SONG__QUERY, { variables: { slug: song } });
 
-  console.log(data);
+
 
   useEffect(() => {
     if (data) {

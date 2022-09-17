@@ -36,8 +36,6 @@ export default function ChristianSongs() {
 
 
 
-  console.log(songData)
-
   return (
     <>
       <Container>
@@ -63,7 +61,7 @@ export default function ChristianSongs() {
                 const songTitle = data.attributes.Song__Title;
                 const songSlug = data.attributes.Slug;
                 let songAuthor = data.attributes.author
-                console.log(songTitle);
+  
                 return (
                   <Col key={i}>
                     <SongCards
