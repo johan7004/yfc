@@ -1,28 +1,26 @@
-import { React, useState, useEffect, useContext } from "react";
+import { React, useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import SongCards from "../song-cards/song-cards.component.jsx";
-import { FullSongContext } from "../contexts/songs-provider.context";
+import { SONGS_QUERY, CATEGORIES_QUERY } from "../queries/songs-query.js";
+import { useQuery } from "@apollo/react-hooks";
 import "./ChristianSongs.css";
-
-export const getSongsData = (data) => {
-  const songListData = () => data;
-  return songListData();
-};
 
 export default function ChristianSongs() {
   const [listOfCategories, setListOfCategories] = useState([]);
   const [songData, setSongData] = useState([]);
-  const { setFullSong } = useContext(FullSongContext);
+  const song = useQuery(SONGS_QUERY);
+  const categories = useQuery(CATEGORIES_QUERY);
 
   useEffect(() => {
-    fetch("https://yfcbackend.herokuapp.com/api/categories")
-      .then((res) => res.json())
-      .then((data) => setListOfCategories(data.data));
-    fetch("https://yfcbackend.herokuapp.com/api/songs")
-      .then((res) => res.json())
-      .then((data) => setSongData(data.data));
-  }, []);
+    if (song.data) {
+      setSongData(song.data.songs.data);
+    }
 
+    if (categories.data) {
+      setListOfCategories(categories.data.categories.data);
+    }
+  }, [song, categories]);
+  
   function displaySongList(e) {
     e.preventDefault();
     const selectedSongCategory = e.target.innerText;
@@ -36,48 +34,48 @@ export default function ChristianSongs() {
       .then((data) => setSongData(data.data));
   }
 
-  useEffect(() => {
-    setFullSong(songData);
-  }, [songData, setFullSong]);
+
+
+  console.log(songData)
 
   return (
     <>
-      <Container className="christian-songs__container">
+      <Container>
         <Row>
-          {!listOfCategories
-            ? "Loading....."
-            : listOfCategories.map((data, i) => {
+          {listOfCategories
+            ? listOfCategories.map((data, i) => {
+                const categoriesTitle = data.attributes.Category__Name;
                 return (
                   <Col key={i}>
-                    <button
-                      className="song-btn-category"
-                      key={i}
-                      onClick={displaySongList}
-                    >
-                      <h4>{data.attributes.Category__Name}</h4>
+                    <button onClick={(e)=> displaySongList(e)}>
+                      <h4>{categoriesTitle}</h4>
                     </button>
                   </Col>
                 );
-              })}
+              })
+            : ""}
         </Row>
       </Container>
-
       <Container className="song-list__container">
         <Row>
-          {songData.map((data, i) => {
-            const songTitle = data.attributes.Song__Title;
-            const songId = data.id
-            return (
-              <Col key={i}>
-                <SongCards
-                  title={songTitle}
-                  description={songTitle}
-                  url={songTitle}
-                  songId={songId}
-                />
-              </Col>
-            );
-          })}
+          {songData
+            ? songData.map((data, i) => {
+                const songTitle = data.attributes.Song__Title;
+                const songSlug = data.attributes.Slug;
+                let songAuthor = data.attributes.author
+                console.log(songTitle);
+                return (
+                  <Col key={i}>
+                    <SongCards
+                      key={i}
+                      title={songTitle}
+                      author={songAuthor}
+                      url={songSlug}
+                    />
+                  </Col>
+                );
+              })
+            : ""}
         </Row>
       </Container>
     </>

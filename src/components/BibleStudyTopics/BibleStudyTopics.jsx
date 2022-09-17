@@ -13,7 +13,6 @@ function BibleStudyTopics() {
     setBibleStudyTopics(data);
   }, [data]);
 
-  console.log(bibleStudyTopics);
 
   return (
     <div>

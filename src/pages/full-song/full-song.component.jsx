@@ -1,47 +1,56 @@
-import { React, useEffect, useState, useContext } from "react";
+import { React, useEffect, useState } from "react";
+import gql from "graphql-tag";
 import { useParams } from "react-router-dom";
-import { FullSongContext } from "../../components/contexts/songs-provider.context";
 import ReactMarkdown from "react-markdown";
-import { Container, Row } from "react-bootstrap";
-import './full-song.css'
+import { Container, Row, Col } from "react-bootstrap";
+import { useQuery } from "@apollo/react-hooks";
+import "./full-song.css";
+
+const SINGLE__SONG__QUERY = gql`
+  query singleSong($slug: String) {
+    songs(filters: { Slug: { eq: $slug } }) {
+      data {
+        id
+        attributes {
+          Slug
+          Song__Title
+          Song
+          author
+        }
+      }
+    }
+  }
+`;
+
 export default function FullSong() {
   const { song } = useParams();
-  const [songList, setSongList] = useState([]);
-  const { songs } = useContext(FullSongContext);
-  const [completeSong, setCompleteSong] = useState("");
+
+  const [completeSong, setCompleteSong] = useState();
+  const { data } = useQuery(SINGLE__SONG__QUERY, { variables: { slug: song } });
+
+  console.log(data);
 
   useEffect(() => {
-    setSongList(songs);
-  }, [songList, songs]);
-  useEffect(() => {
-    Object.keys(songList).forEach((key) => {
-      const songTitle = songList[key].attributes.Song__Title;
-      const fullSongLyric = songList[key].attributes.Song;
-
-      return songTitle === song ? setCompleteSong(fullSongLyric) : "nothing";
-    });
-  }, [songList, song]);
-
-  useEffect(() => {
-    const getSongFromLocal = localStorage.getItem("Full Song");
-    if (getSongFromLocal&&!getSongFromLocal.includes(completeSong)) {
-      localStorage.setItem("Full Song", completeSong);
-    } else if(!getSongFromLocal){
-      localStorage.setItem("Full Song", completeSong);
+    if (data) {
+      setCompleteSong(data.songs.data);
     }
-  }, [completeSong]);
-
-  useEffect(() => {
-    const getSongFromLocal = localStorage.getItem("Full Song");
-    if (getSongFromLocal) {
-      setCompleteSong(getSongFromLocal);
-    }
-  }, []);
+  }, [data]);
 
   return (
     <Container className="full-song__container">
       <Row className="full-song__container-body">
-        <ReactMarkdown>{completeSong}</ReactMarkdown>
+        {completeSong
+          ? completeSong.map((data, i) => {
+              const songTitle = data.attributes.Song__Title;
+              const songLyrics = data.attributes.Song;
+              return (
+                <Col key={i}>
+                  <h3>{songTitle}</h3>
+                  <ReactMarkdown>{songLyrics}</ReactMarkdown>
+                </Col>
+              );
+            })
+          : ""}
       </Row>
     </Container>
   );
