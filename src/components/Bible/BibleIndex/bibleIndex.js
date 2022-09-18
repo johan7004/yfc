@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from "react";
+import Form from "react-bootstrap/Form";
 import "./bibleIndex.css";
 
 import BibleIndexDisplay from "./bibleIndexDisplay/bibleindexDisplay";
@@ -76,11 +77,10 @@ const booksOfNewTestament = [
 
 export default function BibleDirectory() {
   const [fullBible, setFullBible] = useState(null);
-  const [bibleIndex, setbibleIndex] = useState([]);
+  const [bibleIndex, setBibleIndex] = useState([]);
   const [chosenBook, setChosenBook] = useState("");
+  const [bookFilter, setBookFilter] = useState("");
   const [fullbook, setFulBook] = useState(null);
-
- 
 
   useEffect(() => {
     fetch(
@@ -89,16 +89,21 @@ export default function BibleDirectory() {
       .then((response) => response.json())
       .then((Book) => setFullBible(Book));
 
-      setbibleIndex(bookOfOldTestament)
+    setBibleIndex(bookOfOldTestament);
+    setBookFilter(bookOfOldTestament)
   }, []);
 
   const selectTestament = (e) => {
     let selectedTestament = e.target.innerHTML;
     switch (selectedTestament) {
       case "Old Testament":
-        return setbibleIndex(bookOfOldTestament);
+         setBibleIndex(bookOfOldTestament) 
+         setBookFilter(bookOfOldTestament);
+         break;
       case "New Testament":
-        return setbibleIndex(booksOfNewTestament);
+         setBibleIndex(booksOfNewTestament) 
+         setBookFilter(booksOfNewTestament);
+         break;
       default:
         return "Select Testament To Read";
     }
@@ -128,11 +133,35 @@ export default function BibleDirectory() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chosenBook]);
 
+  const bookSearchFilter = (e) => {
+    e.preventDefault();
+    const text = e.target.value;
+    setBookFilter(text);
+    const searchField = text.toLowerCase();
+    const filter = bibleIndex.filter((books)=>{
+      
+      return books.includes(searchField);
+    })
+    setBookFilter(filter);
+  };
+
+  useEffect(()=>{
+    console.log(bookFilter);
+  },[bookFilter])
+
+  
+
   return (
     <>
       <div className="bible__container">
         <h1>Holy Bible</h1>
         <section className="testament">
+          <Form.Control
+            type="text"
+            id="inputPassword5"
+            placeholder="Enter Book Name"
+            onChange={bookSearchFilter}
+          />
           <div className="testament__title">
             <button
               className="testament__title-button"
@@ -151,7 +180,7 @@ export default function BibleDirectory() {
         </section>
         <div>
           <BibleIndexDisplay
-            bookNames={bibleIndex.map((books) => (
+            bookNames={bookFilter.length?bookFilter.map((books) => (
               <p
                 key={books}
                 data-value={books}
@@ -160,7 +189,7 @@ export default function BibleDirectory() {
               >
                 {books}
               </p>
-            ))}
+            )):<p>Book Does not Exist</p>}
             selectedBook={fullbook}
           ></BibleIndexDisplay>
         </div>

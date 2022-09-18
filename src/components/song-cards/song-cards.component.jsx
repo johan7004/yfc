@@ -8,10 +8,12 @@ export default function SongCards({ url, title, author, ...otherProps }) {
     <Card style={{ width: "18rem" }} className="card-container">
       <Card.Body className="card-container__body">
         <Card.Title>{title}</Card.Title>
-        <Card.Text className="card-container__text">By {author}</Card.Text>
-        <Button variant="primary">
-          <Link to={url}>Full Song</Link>
-        </Button>
+        <Card.Text className="card-container__text">
+          Source/Author: {author}
+        </Card.Text>
+        <Link to={url}>
+          <Button variant="primary">Full Song</Button>
+        </Link>
       </Card.Body>
     </Card>
   );

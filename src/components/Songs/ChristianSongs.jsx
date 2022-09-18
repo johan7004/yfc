@@ -39,7 +39,7 @@ export default function ChristianSongs() {
   return (
     <>
       <Container>
-        <Row>
+        <Row className="categories__container">
           {listOfCategories
             ? listOfCategories.map((data, i) => {
                 const categoriesTitle = data.attributes.Category__Name;

@@ -1,0 +1,10 @@
+.categories__container{
+  text-align: center;
+  button{
+    border:none;
+    background:transparent;
+    &:hover{
+      border-bottom: 1px solid black;
+    }
+  }
+}
